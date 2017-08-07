@@ -4,25 +4,35 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="./app/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./lib/domod.js"></script>
   </head>
   <body>
-    <h1 class="heading">Currency Converter Using DoMod DOM Manipulation Library</h1>
-    <h2 class="heading">By Eli Mordechai</h2>
-    <div class="container">
-      <div>
-        <select class="curr-denom" name=""></select>
-        <button type="button" class="all">Get forex</button>
-        <form class="" action="index.html" method="post">
-          <select class="pri-curr" name=""></select>
-          <select class="sec-curr" name=""></select>
-        </form>
+    <div class="outer-container">
+      <h1 class="heading">Currency Converter Using DoMod DOM Manipulation Library</h1>
+      <h2 class="heading">By Eli Mordechai</h2>
+      <div class="inner-container">
+        <div class="all-rates">
+          <h3>Select a base currency and get all rates (USD default)</h3>
+          <select class="curr-denom" name=""></select>
+          <button type="button" class="all">GET FOREX RATES</button>
+        </div>
+        <h3>OR</h3>
+        <div class="comparison">
+          <h3>Select Two Currencies to Compare Rates</h3>
+          <form class="" action="index.html" method="post">
+            <select class="pri-curr" name=""></select>
+            <select class="sec-curr" name=""></select>
+          </form>
+        </div>
         <ul id="comparison"></ul>
+        <br>
+        <h2 id="chart-title"></h2>
         <ul id="chart"></ul>
       </div>
+      <h5 id="footer"></h5>
     </div>
     <!-- <link rel="stylesheet" href="/css/master.css"> -->
-
   </body>
   <script type="text/javascript" src="./app/forex.js" charset="utf-8"></script>
 </html>

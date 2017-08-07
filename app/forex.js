@@ -1,5 +1,7 @@
 let counted = 0;
-// debugger
+//
+
+//Add a Dates accurate as of...
   $l(".all").on("click",() => {
     $l("#chart").empty();
     const denomination = $l(".curr-denom").htmlElements[0].value;
@@ -11,6 +13,8 @@ let counted = 0;
         const obj = JSON.parse(response);
         // const currencies = Object.keys(obj.rates);
         // console.log(currencies);
+        //
+        $l("#chart-title").html(`1 ${denomination} =`);
         currencies.forEach((currency) => {
           if (currency === denomination) {
             $l("#chart").append(`<li>${currency}: 1.00</li>`);
@@ -19,6 +23,8 @@ let counted = 0;
           }
           // $l("#chart").append(`<li>"${currency}",</li>`);
         });
+        ;
+        $l("#footer").html(`All prices are accurate as of ${obj.date}. Prices are updated daily at 11:00 AM EST. Data provided using fixer.io currency conversion API`);
       });
   });
 
@@ -40,7 +46,7 @@ let counted = 0;
     const comparedCurrency = $l(".sec-curr").htmlElements[0].value;
 
     if ((mainCurrency === comparedCurrency) && mainCurrency !== "Select a currency"){
-        $l("#comparison").append(`<li>1 ${mainCurrency} = 1 ${mainCurrency}</li>`);
+        $l("#comparison").append(`<li class="compare-result">1 ${mainCurrency} = 1 ${mainCurrency}</li>`);
     } else if (mainCurrency !== "Select a currency" && comparedCurrency !== "Select a currency") {
       compareCurrencies(mainCurrency, comparedCurrency);
     }
@@ -54,8 +60,8 @@ let counted = 0;
       .then((response) => {
         obj = JSON.parse(response);
         const comparedRate = obj.rates[comparedCurrency];
-        $l("#comparison").append(`<li>1 ${mainCurrency} = ${comparedRate} ${comparedCurrency}</li>`);
-        $l("#comparison").append(`<button class="swap">swap</button>`);
+        $l("#comparison").append(`<li class="compare-result">1 ${mainCurrency} = ${comparedRate} ${comparedCurrency}</li>`);
+        $l("#comparison").append(`<button class="swap"><i class="fa fa-exchange" aria-hidden="true"></i></button>`);
       }).then(() => {
         $l(".swap").on("click",() => {
           $l(comparison).empty();

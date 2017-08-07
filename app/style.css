@@ -1,24 +1,71 @@
 
 html, body {
-               width: 100%;
-               height: 100%;
-               margin: 0;
-               padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
            }
 body {
   height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/currency-background.jpeg');
-    -webkit-background-size: cover;
+  margin-top: 10%;
   }
 
-.container, .heading {
-color: white;
+.inner-container, .heading, h3 {
+  color: white;
+  text-align: center;
+}
+
+.outer-container {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 78%;
+  overflow: auto;
 }
 
 li {
   list-style: none;
+  font-size: 18px;
+  border: white solid 1px;
+}
+
+#chart {
+  columns: 3;
+}
+
+#comparison {
+  display: flex;
+  justify-content: center;
+}
+
+
+.compare-result {
+  border: none;
+}
+
+select {
+  background: transparent;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+}
+
+button {
+  margin-left: 3%;
+  background: transparent;
+  border: 1px white solid;
+  color: white;
+  font-size: 15px;
+  border-radius: 6%;
+}
+
+h2 {
+  margin: 0;
 }
