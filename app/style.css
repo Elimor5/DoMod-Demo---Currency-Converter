@@ -27,7 +27,8 @@ body {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   width: 78%;
-  overflow: auto;
+  margin-bottom: 30px;
+  /*overflow: auto;*/
 }
 
 li {
@@ -68,4 +69,16 @@ button {
 
 h2 {
   margin: 0;
+}
+
+.dev-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.dev-icon {
+  color: white;
+  font-size: 40px !important;
 }
