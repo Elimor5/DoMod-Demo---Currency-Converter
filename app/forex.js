@@ -1,23 +1,22 @@
 let counted = 0;
-
+// debugger
   $l(".all").on("click",() => {
     $l("#chart").empty();
     const denomination = $l(".curr-denom").htmlElements[0].value;
     const targetUrl = `http://api.fixer.io/latest?base=${denomination}`;
 
-    $l.ajax({type: 'GET', url: targetUrl})
+    $l.ajax({type:'GET', url: targetUrl})
       .then((response) =>{
-        counted++;
+        // counted++;
         const obj = JSON.parse(response);
         // const currencies = Object.keys(obj.rates);
-        console.log(currencies);
+        // console.log(currencies);
         currencies.forEach((currency) => {
           if (currency === denomination) {
             $l("#chart").append(`<li>${currency}: 1.00</li>`);
           } else {
             $l("#chart").append(`<li>${currency}: ${obj.rates[currency]}</li>`);
           }
-
           // $l("#chart").append(`<li>"${currency}",</li>`);
         });
       });
@@ -36,12 +35,12 @@ let counted = 0;
 
 
   $l("select").on("change",() => {
-    $l("#chart").empty();
+    $l("#comparison").empty();
     const mainCurrency = $l(".pri-curr").htmlElements[0].value;
     const comparedCurrency = $l(".sec-curr").htmlElements[0].value;
 
     if ((mainCurrency === comparedCurrency) && mainCurrency !== "Select a currency"){
-        $l("#chart").append(`<li>1 ${mainCurrency} = 1 ${mainCurrency}</li>`);
+        $l("#comparison").append(`<li>1 ${mainCurrency} = 1 ${mainCurrency}</li>`);
     } else if (mainCurrency !== "Select a currency" && comparedCurrency !== "Select a currency") {
       compareCurrencies(mainCurrency, comparedCurrency);
     }
@@ -55,11 +54,11 @@ let counted = 0;
       .then((response) => {
         obj = JSON.parse(response);
         const comparedRate = obj.rates[comparedCurrency];
-        $l("#chart").append(`<li>1 ${mainCurrency} = ${comparedRate} ${comparedCurrency}</li>`);
-        $l("#chart").append(`<button class="swap">swap</button>`);
+        $l("#comparison").append(`<li>1 ${mainCurrency} = ${comparedRate} ${comparedCurrency}</li>`);
+        $l("#comparison").append(`<button class="swap">swap</button>`);
       }).then(() => {
         $l(".swap").on("click",() => {
-          $l(chart).empty();
+          $l(comparison).empty();
           compareCurrencies(comparedCurrency, mainCurrency);
         });
       });

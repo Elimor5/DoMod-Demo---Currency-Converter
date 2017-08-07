@@ -3,25 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="./app/style.css">
     <script src="./lib/domod.js"></script>
   </head>
   <body>
-    <div class="">
-      <select class="curr-denom" name=""></select>
-      <button type="button" class="all">Get forex</button>
+    <h1 class="heading">Currency Converter Using DoMod DOM Manipulation Library</h1>
+    <h2 class="heading">By Eli Mordechai</h2>
+    <div class="container">
+      <div>
+        <select class="curr-denom" name=""></select>
+        <button type="button" class="all">Get forex</button>
         <form class="" action="index.html" method="post">
           <select class="pri-curr" name=""></select>
           <select class="sec-curr" name=""></select>
-
-
-          <input id="pri-curr" type="text" name="primary-currency" value="">
-          <input id="sec-curr" type="text" name="secondary-currency" value="">
-          <button type="submit" class="comparison">comparison</button>
         </form>
+        <ul id="comparison"></ul>
+        <ul id="chart"></ul>
+      </div>
     </div>
     <!-- <link rel="stylesheet" href="/css/master.css"> -->
-    <ul id="chart">
-    </ul>
+
   </body>
   <script type="text/javascript" src="./app/forex.js" charset="utf-8"></script>
 </html>

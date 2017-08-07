@@ -1,0 +1,24 @@
+
+html, body {
+               width: 100%;
+               height: 100%;
+               margin: 0;
+               padding: 0;
+           }
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/currency-background.jpeg');
+    -webkit-background-size: cover;
+  }
+
+.container, .heading {
+color: white;
+}
+
+li {
+  list-style: none;
+}
