@@ -23,8 +23,9 @@ let counted = 0;
           }
           // $l("#chart").append(`<li>"${currency}",</li>`);
         });
-        ;
-        $l("#footer").html(`All prices are accurate as of ${obj.date}. Prices are updated daily at 11:00 AM EST. Data provided using fixer.io currency conversion API`);
+
+        $l("#footer").html(`All prices are accurate as of ${obj.date}. Prices are updated daily at 11:00 AM EST.
+           Data provided using fixer.io currency conversion API`);
       });
   });
 
@@ -38,7 +39,6 @@ let counted = 0;
       $l(dropdown).append(`<option value=${currency}>${currency}</option>`);
     });
   });
-
 
   $l("select").on("change",() => {
     $l("#comparison").empty();
