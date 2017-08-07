@@ -5,7 +5,7 @@ let counted = 0;
   $l(".all").on("click",() => {
     $l("#chart").empty();
     const denomination = $l(".curr-denom").htmlElements[0].value;
-    const targetUrl = `http://api.fixer.io/latest?base=${denomination}`;
+    const targetUrl = `https://api.fixer.io/latest?base=${denomination}`;
 
     $l.ajax({type:'GET', url: targetUrl})
       .then((response) =>{
@@ -54,7 +54,7 @@ let counted = 0;
 
 
   function compareCurrencies(mainCurrency, comparedCurrency) {
-    const targetUrl = `http://api.fixer.io/latest?base=${mainCurrency}`;
+    const targetUrl = `https://api.fixer.io/latest?base=${mainCurrency}`;
 
     $l.ajax({type: "GET", url: targetUrl,})
       .then((response) => {
