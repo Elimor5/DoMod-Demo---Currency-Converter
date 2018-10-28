@@ -82,3 +82,7 @@ h2 {
   color: white;
   font-size: 40px !important;
 }
+
+#footer {
+  padding: 0 15px;
+}

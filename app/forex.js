@@ -2,7 +2,7 @@
   $l(".all").on("click",() => {
     $l("#chart").empty();
     const denomination = $l(".curr-denom").htmlElements[0].value;
-    const targetUrl = `https://api.fixer.io/latest?base=${denomination}`;
+    const targetUrl = `https://api.exchangeratesapi.io/latest?base=${denomination}`;
 
     $l.ajax({type:'GET', url: targetUrl})
       .then((response) =>{
@@ -17,8 +17,8 @@
           }
         });
 
-        $l("#footer").html(`All prices are accurate as of ${obj.date}. Prices are updated daily at 11:00 AM EST.
-           Data provided using fixer.io currency conversion API`);
+        $l("#footer").html(`All prices are accurate as of ${obj.date}. Prices are updated hourly as per exhangreatesapi.io's github repo.
+           Data provided using exchangeratesapi.io currency conversion API`);
       });
   });
 
@@ -48,7 +48,7 @@
 
 
   function compareCurrencies(mainCurrency, comparedCurrency) {
-    const targetUrl = `https://api.fixer.io/latest?base=${mainCurrency}`;
+    const targetUrl = `https://api.exchangeratesapi.io/latest?base=${mainCurrency}`;
 
     $l.ajax({type: "GET", url: targetUrl,})
       .then((response) => {
